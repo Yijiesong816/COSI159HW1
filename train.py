@@ -74,7 +74,7 @@ class Trainer:
                 _, predicted = torch.max(test_output.data, dim=1)
 
                 total += test_data.size(0)
-
+                "add up individual correctness"
                 correct_ones += (predicted == test_target).sum().item()
         accuracy = (100*correct_ones / total)
         print('Accuracy is %d %%' % accuracy)
@@ -86,11 +86,11 @@ class Trainer:
         images, labels = sample
         actual_number = labels[1].numpy()
 
-        # Turn off gradients to speed up this part
+        
         with torch.no_grad():
             test_output = self._model(images[1])
             pred_y = torch.max(test_output, 1)
-        # Output of the network are log-probabilities, need to take exponential for probabilities
+        
 
         print("the index of the image is:", pred_y)
         print('Actual number:', actual_number)
