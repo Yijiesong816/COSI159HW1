@@ -1,4 +1,5 @@
 # COSI-159A: Deep Learning Practice
+Required Package: pytorch, torchvision
 
 The evaluation part is not combined with the training part.
 
